@@ -67,10 +67,21 @@
             color: rgba(255, 255, 255, .75);
             font-size: 2.5rem;
         }
+
+        .btn-back {
+            text-decoration: none;
+            outline: none;
+            font-size: 30px;
+            font-weight: 700;
+            color: rgb(47, 47, 170);
+            margin: 50px;
+            position: absolute;
+        }
     </style>
 </head>
 
 <body>
+    <a href="index.html" class="btn-back">back</a>
     <div class="calculator-grid">
         <div class="output">
             <div data-previous-operand class="previous-operand"></div>
@@ -163,9 +174,11 @@
             if (isNaN(integerDigits)) {
                 integerDisplay = ''
             } else {
-                integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
+                integerDisplay = integerDigits.toLocaleString('en', {
+                    maximumFractionDigits: 0
+                })
             }
-            if(decimalDigits != null) {
+            if (decimalDigits != null) {
                 return `${integerDisplay}.${decimalDigits}`
             } else {
                 return integerDisplay
@@ -175,7 +188,8 @@
         updateDisplay() {
             this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
             if (this.operation != null) {
-                this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+                this.previousOperandTextElement.innerText =
+                    `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
             } else {
                 this.previousOperandTextElement.innerText = ''
             }

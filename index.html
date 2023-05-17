@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background: #f3ecec;
+        }
+        menu {
+            display: flex;
+            gap: 50px;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        menu a {
+            text-decoration: none;
+            outline: none;
+            font-size: 30px;
+            font-weight: 700;
+            color: rgb(47, 47, 170);
+        }
+
+        menu a:active {
+            color: rgb(47, 47, 170);
+        }
+    </style>
 </head>
+
 <body>
     <menu>
         <a href="calculator.html">Calculator</a>
         <a href="counter.html">Counter</a>
-        <a href="countdown-newyear.html">Count Down New Year</a>
+        <a href="countdown-newyear.html">CountDown New Year</a>
+        <a href="age-calculator.html">Age Calculator</a>
     </menu>
 </body>
+
 </html>
