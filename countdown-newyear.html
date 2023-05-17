@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background: linear-gradient(to right, #00AAFF, #00FF6C);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            gap: 80px;
+        }
+
+        h1 {
+            font-size: 80px;
+            font-weight: 700;
+            color: #c32911de;
+        }
+
+        .countdown-newyear {
+            display: flex;
+            gap: 40px;
+            font-size: 100px;
+            font-weight: 700;
+            background: aliceblue;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .countdown-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .countdown-items span {
+            font-size: 30px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>New Year Countdown</h1>
+        <div class="countdown-newyear">
+            <div class="countdown-items">
+                <div class="countdown-days"></div>
+                <span>DAYS</span>
+            </div>
+            <div class="countdown-items">
+                <div class="countdown-hours"></div>
+                <span>HOURS</span>
+            </div>
+            <div class="countdown-items">
+                <div class="countdown-minutes"></div>
+                <span>MINUTES</span>
+            </div>
+            <div class="countdown-items">
+                <div class="countdown-seconds"></div>
+                <span>SECONDS</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    class Countdown {
+        constructor(){
+        }
+    }
+const countDownDays = document.getElementsByClassName('countdown-days')
+const countDownHoues = document.getElementsByClassName('countdown-hours')
+const countDownMinutes = document.getElementsByClassName('countdown-minutes')
+const countDownSeconds = document.getElementsByClassName('countdown-seconds')
+</script>
+</html>
