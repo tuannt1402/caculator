@@ -13,6 +13,7 @@
             box-sizing: border-box;
             font-family: 'Rubik', sans-serif;
         }
+
         .btn-back {
             text-decoration: none;
             outline: none;
@@ -20,17 +21,114 @@
             font-weight: 700;
             color: #FFF;
             background: black;
-            padding: 8px 16px;;
+            padding: 8px 16px;
+            ;
             border-radius: 12px;
             margin: 50px;
             position: absolute;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to right, #00AAFF, #00FF6C);
+            gap: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0 0 10px #3498DB,
+                0 0 20px #3498DB,
+                0 0 30px #3498DB,
+                0 0 40px #2980B9,
+                0 0 70px #2980B9,
+                0 0 80px #2980B9,
+                0 0 100px #2980B9,
+                0 0 150px #2980B9;
+        }
+
+        input[type="date"] {
+            padding: 15px;
+            font-size: 25px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background: #2980b9b8;
+            color: #FFF;
+            font-weight: 700;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            border: none;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #FFF;
+        }
+
+        .age-content {
+            font-size: 20px;
+            color: #FFF;
+            text-shadow: 0 0 10px #3498DB,
+                0 0 20px #3498DB,
+                0 0 30px #3498DB,
+                0 0 40px #2980B9,
+                0 0 70px #2980B9,
+                0 0 80px #2980B9,
+                0 0 100px #2980B9,
+                0 0 150px #2980B9;
         }
     </style>
 </head>
 
 <body>
     <a href="index.html" class="btn-back">back</a>
-
+    <div class="container">
+        <h1>Nhập ngày tháng năm sinh của bạn</h1>
+        <input type="date" class="input-date">
+        <button type="submit" class="btn-submit">Hoàn Thành</button>
+        <h3 class="age-content"></h3>
+    </div>
 </body>
+<script>
+    const btnSubmit = document.querySelector('.btn-submit');
+    const ageContent = document.querySelector('.age-content');
+
+    function ageCalculator() {
+        const inputDate = document.querySelector('.input-date').value;
+        
+        const dob = new Date(inputDate);
+        if (inputDate == null || inputDate == '') {
+            ageContent.innerHTML = "Vui Lòng nhập vào tuổi của bạn!"
+            return false;
+        } else {
+            let monthDiff = Date.now() - dob.getTime();
+
+            let ageDT = new Date(monthDiff);
+
+            let year = ageDT.getUTCFullYear();
+
+            let age = Math.abs(year - 1970);
+
+            return ageContent.innerHTML = "Tuổi của bạn là: " + age + " tuổi.";
+        }
+    }
+
+    btnSubmit.addEventListener('click', () => {
+        ageCalculator();
+    });
+</script>
 
 </html>
