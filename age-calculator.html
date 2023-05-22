@@ -96,9 +96,9 @@
 <body>
     <a href="index.html" class="btn-back">back</a>
     <div class="container">
-        <h1>Nhập ngày tháng năm sinh của bạn</h1>
+        <!-- <h1>Nhập ngày tháng năm sinh của bạn</h1> -->
         <input type="date" class="input-date">
-        <button type="submit" class="btn-submit">Hoàn Thành</button>
+        <button type="submit" class="btn-submit">Kiểm Tra</button>
         <h3 class="age-content"></h3>
     </div>
 </body>
@@ -110,17 +110,22 @@
         const inputDate = document.querySelector('.input-date').value;
         
         const dob = new Date(inputDate);
+        console.log('1: ', dob);
         if (inputDate == null || inputDate == '') {
             ageContent.innerHTML = "Vui Lòng nhập vào tuổi của bạn!"
             return false;
         } else {
             let monthDiff = Date.now() - dob.getTime();
+            console.log('2: ', monthDiff);
 
             let ageDT = new Date(monthDiff);
+            console.log('3: ', ageDT);
 
             let year = ageDT.getUTCFullYear();
+            console.log('4: ', year);
 
             let age = Math.abs(year - 1970);
+            console.log('5: ', age);
 
             return ageContent.innerHTML = "Tuổi của bạn là: " + age + " tuổi.";
         }
